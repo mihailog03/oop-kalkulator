@@ -49,12 +49,15 @@ namespace Kalkulator
             this.minusButton = new System.Windows.Forms.Button();
             this.plusButton = new System.Windows.Forms.Button();
             this.equalsButton = new System.Windows.Forms.Button();
+            this.reciprocalButton = new System.Windows.Forms.Button();
+            this.squareButton = new System.Windows.Forms.Button();
+            this.rootButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // num1
             // 
             this.num1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num1.Location = new System.Drawing.Point(12, 114);
+            this.num1.Location = new System.Drawing.Point(12, 231);
             this.num1.Name = "num1";
             this.num1.Size = new System.Drawing.Size(84, 40);
             this.num1.TabIndex = 0;
@@ -65,16 +68,16 @@ namespace Kalkulator
             // 
             this.calculatorDisplay.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.calculatorDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculatorDisplay.Location = new System.Drawing.Point(12, 9);
+            this.calculatorDisplay.Location = new System.Drawing.Point(12, 12);
             this.calculatorDisplay.Name = "calculatorDisplay";
-            this.calculatorDisplay.Size = new System.Drawing.Size(326, 56);
+            this.calculatorDisplay.Size = new System.Drawing.Size(318, 66);
             this.calculatorDisplay.TabIndex = 1;
             this.calculatorDisplay.Text = "0";
             // 
             // num2
             // 
             this.num2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num2.Location = new System.Drawing.Point(95, 114);
+            this.num2.Location = new System.Drawing.Point(95, 231);
             this.num2.Name = "num2";
             this.num2.Size = new System.Drawing.Size(84, 40);
             this.num2.TabIndex = 2;
@@ -84,7 +87,7 @@ namespace Kalkulator
             // num3
             // 
             this.num3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num3.Location = new System.Drawing.Point(178, 114);
+            this.num3.Location = new System.Drawing.Point(178, 231);
             this.num3.Name = "num3";
             this.num3.Size = new System.Drawing.Size(84, 40);
             this.num3.TabIndex = 3;
@@ -94,7 +97,7 @@ namespace Kalkulator
             // num4
             // 
             this.num4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num4.Location = new System.Drawing.Point(12, 153);
+            this.num4.Location = new System.Drawing.Point(12, 192);
             this.num4.Name = "num4";
             this.num4.Size = new System.Drawing.Size(84, 40);
             this.num4.TabIndex = 4;
@@ -104,7 +107,7 @@ namespace Kalkulator
             // num5
             // 
             this.num5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num5.Location = new System.Drawing.Point(95, 153);
+            this.num5.Location = new System.Drawing.Point(95, 192);
             this.num5.Name = "num5";
             this.num5.Size = new System.Drawing.Size(84, 40);
             this.num5.TabIndex = 5;
@@ -114,7 +117,7 @@ namespace Kalkulator
             // num6
             // 
             this.num6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num6.Location = new System.Drawing.Point(178, 153);
+            this.num6.Location = new System.Drawing.Point(178, 192);
             this.num6.Name = "num6";
             this.num6.Size = new System.Drawing.Size(84, 40);
             this.num6.TabIndex = 6;
@@ -124,7 +127,7 @@ namespace Kalkulator
             // num7
             // 
             this.num7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num7.Location = new System.Drawing.Point(12, 192);
+            this.num7.Location = new System.Drawing.Point(12, 153);
             this.num7.Name = "num7";
             this.num7.Size = new System.Drawing.Size(84, 40);
             this.num7.TabIndex = 7;
@@ -134,7 +137,7 @@ namespace Kalkulator
             // num8
             // 
             this.num8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num8.Location = new System.Drawing.Point(95, 192);
+            this.num8.Location = new System.Drawing.Point(95, 153);
             this.num8.Name = "num8";
             this.num8.Size = new System.Drawing.Size(84, 40);
             this.num8.TabIndex = 8;
@@ -144,7 +147,7 @@ namespace Kalkulator
             // num9
             // 
             this.num9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num9.Location = new System.Drawing.Point(178, 192);
+            this.num9.Location = new System.Drawing.Point(178, 153);
             this.num9.Name = "num9";
             this.num9.Size = new System.Drawing.Size(84, 40);
             this.num9.TabIndex = 9;
@@ -154,18 +157,17 @@ namespace Kalkulator
             // clearEntryButton
             // 
             this.clearEntryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearEntryButton.Location = new System.Drawing.Point(95, 76);
+            this.clearEntryButton.Location = new System.Drawing.Point(95, 79);
             this.clearEntryButton.Name = "clearEntryButton";
             this.clearEntryButton.Size = new System.Drawing.Size(84, 36);
             this.clearEntryButton.TabIndex = 11;
             this.clearEntryButton.Text = "CE";
             this.clearEntryButton.UseVisualStyleBackColor = true;
-            this.clearEntryButton.Click += new System.EventHandler(this.button11_Click);
             // 
             // num0
             // 
             this.num0.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num0.Location = new System.Drawing.Point(12, 233);
+            this.num0.Location = new System.Drawing.Point(12, 270);
             this.num0.Name = "num0";
             this.num0.Size = new System.Drawing.Size(167, 40);
             this.num0.TabIndex = 12;
@@ -175,7 +177,7 @@ namespace Kalkulator
             // decimalButton
             // 
             this.decimalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.decimalButton.Location = new System.Drawing.Point(178, 233);
+            this.decimalButton.Location = new System.Drawing.Point(178, 270);
             this.decimalButton.Name = "decimalButton";
             this.decimalButton.Size = new System.Drawing.Size(84, 40);
             this.decimalButton.TabIndex = 13;
@@ -185,7 +187,7 @@ namespace Kalkulator
             // clearAllButton
             // 
             this.clearAllButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearAllButton.Location = new System.Drawing.Point(178, 76);
+            this.clearAllButton.Location = new System.Drawing.Point(178, 79);
             this.clearAllButton.Name = "clearAllButton";
             this.clearAllButton.Size = new System.Drawing.Size(84, 36);
             this.clearAllButton.TabIndex = 19;
@@ -195,7 +197,7 @@ namespace Kalkulator
             // undoButton
             // 
             this.undoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.undoButton.Location = new System.Drawing.Point(12, 76);
+            this.undoButton.Location = new System.Drawing.Point(12, 79);
             this.undoButton.Name = "undoButton";
             this.undoButton.Size = new System.Drawing.Size(84, 36);
             this.undoButton.TabIndex = 20;
@@ -205,7 +207,7 @@ namespace Kalkulator
             // divideButton
             // 
             this.divideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.divideButton.Location = new System.Drawing.Point(268, 76);
+            this.divideButton.Location = new System.Drawing.Point(261, 79);
             this.divideButton.Name = "divideButton";
             this.divideButton.Size = new System.Drawing.Size(70, 36);
             this.divideButton.TabIndex = 21;
@@ -215,7 +217,7 @@ namespace Kalkulator
             // multiplyButton
             // 
             this.multiplyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.multiplyButton.Location = new System.Drawing.Point(268, 114);
+            this.multiplyButton.Location = new System.Drawing.Point(261, 114);
             this.multiplyButton.Name = "multiplyButton";
             this.multiplyButton.Size = new System.Drawing.Size(70, 40);
             this.multiplyButton.TabIndex = 22;
@@ -225,7 +227,7 @@ namespace Kalkulator
             // minusButton
             // 
             this.minusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minusButton.Location = new System.Drawing.Point(268, 153);
+            this.minusButton.Location = new System.Drawing.Point(261, 153);
             this.minusButton.Name = "minusButton";
             this.minusButton.Size = new System.Drawing.Size(70, 40);
             this.minusButton.TabIndex = 23;
@@ -235,7 +237,7 @@ namespace Kalkulator
             // plusButton
             // 
             this.plusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plusButton.Location = new System.Drawing.Point(268, 192);
+            this.plusButton.Location = new System.Drawing.Point(261, 192);
             this.plusButton.Name = "plusButton";
             this.plusButton.Size = new System.Drawing.Size(70, 40);
             this.plusButton.TabIndex = 24;
@@ -245,18 +247,51 @@ namespace Kalkulator
             // equalsButton
             // 
             this.equalsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.equalsButton.Location = new System.Drawing.Point(268, 233);
+            this.equalsButton.Location = new System.Drawing.Point(261, 231);
             this.equalsButton.Name = "equalsButton";
-            this.equalsButton.Size = new System.Drawing.Size(70, 40);
+            this.equalsButton.Size = new System.Drawing.Size(70, 79);
             this.equalsButton.TabIndex = 25;
             this.equalsButton.Text = "=";
             this.equalsButton.UseVisualStyleBackColor = true;
+            // 
+            // reciprocalButton
+            // 
+            this.reciprocalButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reciprocalButton.Location = new System.Drawing.Point(12, 114);
+            this.reciprocalButton.Name = "reciprocalButton";
+            this.reciprocalButton.Size = new System.Drawing.Size(84, 40);
+            this.reciprocalButton.TabIndex = 26;
+            this.reciprocalButton.Text = "1/x";
+            this.reciprocalButton.UseVisualStyleBackColor = true;
+            // 
+            // squareButton
+            // 
+            this.squareButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.squareButton.Location = new System.Drawing.Point(95, 114);
+            this.squareButton.Name = "squareButton";
+            this.squareButton.Size = new System.Drawing.Size(84, 40);
+            this.squareButton.TabIndex = 27;
+            this.squareButton.Text = "x²";
+            this.squareButton.UseVisualStyleBackColor = true;
+            // 
+            // rootButton
+            // 
+            this.rootButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rootButton.Location = new System.Drawing.Point(178, 114);
+            this.rootButton.Name = "rootButton";
+            this.rootButton.Size = new System.Drawing.Size(84, 40);
+            this.rootButton.TabIndex = 28;
+            this.rootButton.Text = "√x";
+            this.rootButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 292);
+            this.ClientSize = new System.Drawing.Size(342, 320);
+            this.Controls.Add(this.rootButton);
+            this.Controls.Add(this.squareButton);
+            this.Controls.Add(this.reciprocalButton);
             this.Controls.Add(this.equalsButton);
             this.Controls.Add(this.plusButton);
             this.Controls.Add(this.minusButton);
@@ -306,6 +341,9 @@ namespace Kalkulator
         private System.Windows.Forms.Button minusButton;
         private System.Windows.Forms.Button plusButton;
         private System.Windows.Forms.Button equalsButton;
+        private System.Windows.Forms.Button reciprocalButton;
+        private System.Windows.Forms.Button squareButton;
+        private System.Windows.Forms.Button rootButton;
     }
 }
 

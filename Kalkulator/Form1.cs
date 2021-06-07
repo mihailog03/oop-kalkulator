@@ -16,20 +16,5 @@ namespace Kalkulator
         {
             InitializeComponent();
         }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\user\Desktop\oop-kalkulator\Kalkulator\bin\Debug\Kalkulator.exe.config
+C:\Users\user\Desktop\oop-kalkulator\Kalkulator\bin\Debug\Kalkulator.exe
+C:\Users\user\Desktop\oop-kalkulator\Kalkulator\bin\Debug\Kalkulator.pdb
+C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.csprojAssemblyReference.cache
+C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.Form1.resources
+C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.Properties.Resources.resources
+C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.csproj.GenerateResource.cache
+C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.exe
+C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.pdb

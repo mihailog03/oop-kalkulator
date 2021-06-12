@@ -183,50 +183,65 @@ namespace Kalkulator
 
         private void equalsButton_Click(object sender, EventArgs e)
         {
-            second = userInput;
-            double firstNum, secondNum;
-            firstNum = Convert.ToDouble(first);
-            secondNum = Convert.ToDouble(second);
-
-            //Plus
-            if (function == "+")
+            if (equalsClicked == false)
             {
-                result = firstNum + secondNum;
-                calculatorDisplay.Text = result.ToString();
-                userInput = "";
-            }
+                second = userInput;
+                double firstNum, secondNum;
+                firstNum = Convert.ToDouble(first);
+                secondNum = Convert.ToDouble(second);
 
-            //Minus
-            else if (function == "-")
-            {
-                result = firstNum - secondNum;
-                calculatorDisplay.Text = result.ToString();
-                userInput = "";
-            }
-
-            //Puta
-            else if (function == "*")
-            {
-                result = firstNum * secondNum;
-                calculatorDisplay.Text = result.ToString();
-                userInput = "";
-            }
-
-            //Podeljeno
-            else if (function == "/")
-            {
-                if (secondNum == 0)
+                //Plus
+                if (function == "+")
                 {
-                    calculatorDisplay.Text = "error";
-                    userInput = "";
-                }
-
-                else
-                {
-                    result = firstNum / secondNum;
+                    function = "";
+                    result = firstNum + secondNum;
                     calculatorDisplay.Text = result.ToString();
-                    userInput = "";
+                    userInput = result.ToString();
+                    ifPreviouslyModified = true;
                 }
+
+                //Minus
+                else if (function == "-")
+                {
+                    function = "";
+                    result = firstNum - secondNum;
+                    calculatorDisplay.Text = result.ToString();
+                    userInput = result.ToString();
+                    ifPreviouslyModified = true;
+                }
+
+                //Puta
+                else if (function == "*")
+                {
+                    function = "";
+                    result = firstNum * secondNum;
+                    calculatorDisplay.Text = result.ToString();
+                    userInput = result.ToString();
+                    ifPreviouslyModified = true;
+                }
+
+                //Podeljeno
+                else if (function == "/")
+                {
+                    if (secondNum == 0)
+                    {
+                        calculatorDisplay.Text = "error";
+                        userInput = "";
+                    }
+
+                    else
+                    {
+                        function = "";
+                        result = firstNum / secondNum;
+                        calculatorDisplay.Text = result.ToString();
+                        userInput = result.ToString();
+                        ifPreviouslyModified = true;
+                    }
+                }
+            }
+            else
+            {
+                return;
             }
         }
 
@@ -248,7 +263,7 @@ namespace Kalkulator
         private void squareButton_Click(object sender, EventArgs e)
         {
             calculatorDisplay.Text = "";
-            calculatorDisplay.Text += Math.Pow(Double.Parse(userInput),2);
+            calculatorDisplay.Text += Math.Pow(Double.Parse(userInput), 2);
             userInput = Math.Pow(Double.Parse(userInput), 2).ToString();
             ifPreviouslyModified = true;
         }

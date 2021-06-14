@@ -18,7 +18,6 @@ namespace Kalkulator
         double result = 0.0;
         string userInput = "";
         bool ifPreviouslyModified = false;
-        bool equalsClicked = false;
 
         public Form1()
         {
@@ -183,71 +182,64 @@ namespace Kalkulator
 
         private void equalsButton_Click(object sender, EventArgs e)
         {
-            if (equalsClicked == false)
+            second = userInput;
+            double firstNum, secondNum;
+            firstNum = Convert.ToDouble(first);
+            secondNum = Convert.ToDouble(second);
+
+            //Plus
+            if (function == "+")
             {
-                second = userInput;
-                double firstNum, secondNum;
-                firstNum = Convert.ToDouble(first);
-                secondNum = Convert.ToDouble(second);
-
-                //Plus
-                if (function == "+")
-                {
-                    function = "";
-                    result = firstNum + secondNum;
-                    calculatorDisplay.Text = result.ToString();
-                    userInput = result.ToString();
-                    ifPreviouslyModified = true;
-                }
-
-                //Minus
-                else if (function == "-")
-                {
-                    function = "";
-                    result = firstNum - secondNum;
-                    calculatorDisplay.Text = result.ToString();
-                    userInput = result.ToString();
-                    ifPreviouslyModified = true;
-                }
-
-                //Puta
-                else if (function == "*")
-                {
-                    function = "";
-                    result = firstNum * secondNum;
-                    calculatorDisplay.Text = result.ToString();
-                    userInput = result.ToString();
-                    ifPreviouslyModified = true;
-                }
-
-                //Podeljeno
-                else if (function == "/")
-                {
-                    if (secondNum == 0)
-                    {
-                        calculatorDisplay.Text = "error";
-                        userInput = "";
-                    }
-
-                    else
-                    {
-                        function = "";
-                        result = firstNum / secondNum;
-                        calculatorDisplay.Text = result.ToString();
-                        userInput = result.ToString();
-                        ifPreviouslyModified = true;
-                    }
-                }
+                function = "";
+                result = firstNum + secondNum;
+                calculatorDisplay.Text = result.ToString();
+                userInput = result.ToString();
+                ifPreviouslyModified = true;
             }
-            else
+
+            //Minus
+            else if (function == "-")
             {
-                return;
+                function = "";
+                result = firstNum - secondNum;
+                calculatorDisplay.Text = result.ToString();
+                userInput = result.ToString();
+                ifPreviouslyModified = true;
+            }
+
+            //Puta
+            else if (function == "*")
+            {
+                function = "";
+                result = firstNum * secondNum;
+                calculatorDisplay.Text = result.ToString();
+                userInput = result.ToString();
+                ifPreviouslyModified = true;
+            }
+
+            //Podeljeno
+            else if (function == "/")
+            {
+                if (secondNum == 0)
+                {
+                    calculatorDisplay.Text = "error";
+                    userInput = "";
+                }
+
+                else
+                {
+                    function = "";
+                    result = firstNum / secondNum;
+                    calculatorDisplay.Text = result.ToString();
+                    userInput = result.ToString();
+                    ifPreviouslyModified = true;
+                }
             }
         }
 
         private void decimalButton_Click(object sender, EventArgs e)
         {
-
+            if (userInput.Contains(",")) return;
             calculatorDisplay.Text += ",";
             userInput += ",";
         }

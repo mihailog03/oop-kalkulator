@@ -12,12 +12,13 @@ namespace Kalkulator
 {
     public partial class Form1 : Form
     {
-        string first = "";
-        string second = "";
         string function = "";
         double result = 0.0;
         string userInput = "";
         bool ifPreviouslyModified = false;
+        bool equalsClicked = false;
+        bool operationClicked = false;
+        double lastNum;
 
         public Form1()
         {
@@ -31,9 +32,22 @@ namespace Kalkulator
                 ifPreviouslyModified = false;
                 userInput = "";
             }
-            calculatorDisplay.Text = "";
-            userInput += "0";
-            calculatorDisplay.Text += userInput;
+            if (operationClicked)
+            {
+                userInput = "";
+                operationClicked = false;
+            }
+            if (equalsClicked)
+            {
+                result = 0;
+                equalsClicked = false;
+            }
+            if (calculatorDisplay.Text != "0")
+            {
+                calculatorDisplay.Text = "";
+                userInput += "0";
+                calculatorDisplay.Text += userInput;
+            }
         }
 
         private void num1_Click(object sender, EventArgs e)
@@ -42,6 +56,16 @@ namespace Kalkulator
             {
                 ifPreviouslyModified = false;
                 userInput = "";
+            }
+            if (operationClicked)
+            {
+                userInput = "";
+                operationClicked = false;
+            }
+            if (equalsClicked)
+            {
+                result = 0;
+                equalsClicked = false;
             }
             calculatorDisplay.Text = "";
             userInput += "1";
@@ -55,6 +79,16 @@ namespace Kalkulator
                 ifPreviouslyModified = false;
                 userInput = "";
             }
+            if (operationClicked)
+            {
+                userInput = "";
+                operationClicked = false;
+            }
+            if (equalsClicked)
+            {
+                result = 0;
+                equalsClicked = false;
+            }
             calculatorDisplay.Text = "";
             userInput += "2";
             calculatorDisplay.Text += userInput;
@@ -66,6 +100,16 @@ namespace Kalkulator
             {
                 ifPreviouslyModified = false;
                 userInput = "";
+            }
+            if (operationClicked)
+            {
+                userInput = "";
+                operationClicked = false;
+            }
+            if (equalsClicked)
+            {
+                result = 0;
+                equalsClicked = false;
             }
             calculatorDisplay.Text = "";
             userInput += "3";
@@ -79,6 +123,16 @@ namespace Kalkulator
                 ifPreviouslyModified = false;
                 userInput = "";
             }
+            if (operationClicked)
+            {
+                userInput = "";
+                operationClicked = false;
+            }
+            if (equalsClicked)
+            {
+                result = 0;
+                equalsClicked = false;
+            }
             calculatorDisplay.Text = "";
             userInput += "4";
             calculatorDisplay.Text += userInput;
@@ -90,6 +144,16 @@ namespace Kalkulator
             {
                 ifPreviouslyModified = false;
                 userInput = "";
+            }
+            if (operationClicked)
+            {
+                userInput = "";
+                operationClicked = false;
+            }
+            if (equalsClicked)
+            {
+                result = 0;
+                equalsClicked = false;
             }
             calculatorDisplay.Text = "";
             userInput += "5";
@@ -103,6 +167,16 @@ namespace Kalkulator
                 ifPreviouslyModified = false;
                 userInput = "";
             }
+            if (operationClicked)
+            {
+                userInput = "";
+                operationClicked = false;
+            }
+            if (equalsClicked)
+            {
+                result = 0;
+                equalsClicked = false;
+            }
             calculatorDisplay.Text = "";
             userInput += "6";
             calculatorDisplay.Text += userInput;
@@ -114,6 +188,16 @@ namespace Kalkulator
             {
                 ifPreviouslyModified = false;
                 userInput = "";
+            }
+            if (operationClicked)
+            {
+                userInput = "";
+                operationClicked = false;
+            }
+            if (equalsClicked)
+            {
+                result = 0;
+                equalsClicked = false;
             }
             calculatorDisplay.Text = "";
             userInput += "7";
@@ -127,6 +211,16 @@ namespace Kalkulator
                 ifPreviouslyModified = false;
                 userInput = "";
             }
+            if (operationClicked)
+            {
+                userInput = "";
+                operationClicked = false;
+            }
+            if (equalsClicked)
+            {
+                result = 0;
+                equalsClicked = false;
+            }
             calculatorDisplay.Text = "";
             userInput += "8";
             calculatorDisplay.Text += userInput;
@@ -139,6 +233,16 @@ namespace Kalkulator
                 ifPreviouslyModified = false;
                 userInput = "";
             }
+            if (operationClicked)
+            {
+                userInput = "";
+                operationClicked = false;
+            }
+            if (equalsClicked)
+            {
+                result = 0;
+                equalsClicked = false;
+            }
             calculatorDisplay.Text = "";
             userInput += "9";
             calculatorDisplay.Text += userInput;
@@ -146,125 +250,231 @@ namespace Kalkulator
 
         private void divideButton_Click(object sender, EventArgs e)
         {
-            if (function == "")
-                first = userInput;
-            ifPreviouslyModified = false;
+            if (userInput != "" && equalsClicked == false && operationClicked == false)
+            {
+                if (function == "")
+                {
+                    result += Convert.ToDouble(userInput);
+                    userInput = "";
+                }
+                else
+                {
+                    result /= Convert.ToDouble(userInput);
+                    calculatorDisplay.Text = result.ToString();
+                    ifPreviouslyModified = false;
+                    lastNum = Convert.ToDouble(userInput);
+                    userInput = "";
+                }
+            }
             function = "/";
-            userInput = "";
+            equalsClicked = false;
+            operationClicked = true;
         }
 
         private void multiplyButton_Click(object sender, EventArgs e)
         {
-            if (function == "")
-                first = userInput;
-            ifPreviouslyModified = false;
+            if (userInput != "" && equalsClicked == false && operationClicked == false)
+            {
+                if (function == "")
+                {
+                    result += Convert.ToDouble(userInput);
+                    userInput = "";
+                }
+                else
+                {
+                    result *= Convert.ToDouble(userInput);
+                    calculatorDisplay.Text = result.ToString();
+                    ifPreviouslyModified = false;
+                    lastNum = Convert.ToDouble(userInput);
+                    userInput = "";
+                }
+            }
             function = "*";
-            userInput = "";
+            equalsClicked = false;
+            operationClicked = true;
         }
 
         private void minusButton_Click(object sender, EventArgs e)
         {
-            if (function == "")
-                first = userInput;
-            ifPreviouslyModified = false;
+            if (userInput != "" && equalsClicked == false && operationClicked == false)
+            {
+                if (function == "")
+                {
+                    result += Convert.ToDouble(userInput);
+                    userInput = "";
+                }
+                else
+                {
+                    result -= Convert.ToDouble(userInput);
+                    calculatorDisplay.Text = result.ToString();
+                    ifPreviouslyModified = false;
+                    lastNum = Convert.ToDouble(userInput);
+                    userInput = "";
+                }
+
+            }
             function = "-";
-            userInput = "";
+            equalsClicked = false;
+            operationClicked = true;
         }
 
         private void plusButton_Click(object sender, EventArgs e)
         {
-            if (function == "")
-                first = userInput;
-            ifPreviouslyModified = false;
+            if (userInput != "" && equalsClicked == false && operationClicked == false)
+            {
+                if (function == "")
+                {
+                    result += Convert.ToDouble(userInput);
+                    userInput = "";
+                }
+                else
+                {
+                    result += Convert.ToDouble(userInput);
+                    calculatorDisplay.Text = result.ToString();
+                    ifPreviouslyModified = false;
+                    lastNum = Convert.ToDouble(userInput);
+                    userInput = "";
+                }
+            }
             function = "+";
-            userInput = "";
+            equalsClicked = false;
+            operationClicked = true;
         }
 
         private void equalsButton_Click(object sender, EventArgs e)
         {
-            second = userInput;
-            double firstNum, secondNum;
-            firstNum = Convert.ToDouble(first);
-            secondNum = Convert.ToDouble(second);
-
-            //Plus
-            if (function == "+")
+            equalsClicked = true;
+            if (userInput != "")
             {
-                function = "";
-                result = firstNum + secondNum;
-                calculatorDisplay.Text = result.ToString();
-                userInput = result.ToString();
-                ifPreviouslyModified = true;
-            }
+                double firstNum;
+                firstNum = Convert.ToDouble(userInput);
 
-            //Minus
-            else if (function == "-")
-            {
-                function = "";
-                result = firstNum - secondNum;
-                calculatorDisplay.Text = result.ToString();
-                userInput = result.ToString();
-                ifPreviouslyModified = true;
-            }
-
-            //Puta
-            else if (function == "*")
-            {
-                function = "";
-                result = firstNum * secondNum;
-                calculatorDisplay.Text = result.ToString();
-                userInput = result.ToString();
-                ifPreviouslyModified = true;
-            }
-
-            //Podeljeno
-            else if (function == "/")
-            {
-                if (secondNum == 0)
-                {
-                    calculatorDisplay.Text = "error";
-                    userInput = "";
-                }
-
-                else
+                //Plus
+                if (function == "+")
                 {
                     function = "";
-                    result = firstNum / secondNum;
+                    result += firstNum;
                     calculatorDisplay.Text = result.ToString();
-                    userInput = result.ToString();
+                    userInput = "";
+                    ifPreviouslyModified = true;
+                }
+
+                //Minus
+                else if (function == "-")
+                {
+                    function = "";
+                    result -= firstNum;
+                    calculatorDisplay.Text = result.ToString();
+                    userInput = "";
+                    ifPreviouslyModified = true;
+                }
+
+                //Puta
+                else if (function == "*")
+                {
+                    function = "";
+                    result *= firstNum;
+                    calculatorDisplay.Text = result.ToString();
+                    userInput = "";
+                    ifPreviouslyModified = true;
+                }
+
+                //Podeljeno
+                else if (function == "/")
+                {
+                    if (firstNum == 0)
+                    {
+                        calculatorDisplay.Text = "Error";
+                        return;
+                    }
+                    function = "";
+                    result /= firstNum;
+                    calculatorDisplay.Text = result.ToString();
+                    userInput = "";
                     ifPreviouslyModified = true;
                 }
             }
+
         }
 
         private void decimalButton_Click(object sender, EventArgs e)
         {
             if (userInput.Contains(",")) return;
-            calculatorDisplay.Text += ",";
-            userInput += ",";
+            if (userInput=="")
+            {
+                calculatorDisplay.Text += ",";
+                userInput += "0,";
+            }
+            else 
+            {
+                calculatorDisplay.Text += ",";
+                userInput += ",";
+            }
         }
 
         private void reciprocalButton_Click(object sender, EventArgs e)
         {
+            if (userInput == "0")
+            {
+                calculatorDisplay.Text = "Error";
+                return;
+            }
             calculatorDisplay.Text = "";
-            calculatorDisplay.Text += 1 / Double.Parse(userInput);
-            userInput = (1 / Double.Parse(userInput)).ToString();
+            if (equalsClicked)
+            {
+                calculatorDisplay.Text += 1 / result;
+                userInput = (1 / result).ToString();
+                result = 1 / result;
+            }
+            else
+            {
+                calculatorDisplay.Text += 1 / Double.Parse(userInput);
+                userInput = (1 / Double.Parse(userInput)).ToString();
+            }
             ifPreviouslyModified = true;
         }
 
         private void squareButton_Click(object sender, EventArgs e)
         {
+            if (userInput == "0")
+            {
+                calculatorDisplay.Text = "Error";
+                return;
+            }
             calculatorDisplay.Text = "";
-            calculatorDisplay.Text += Math.Pow(Double.Parse(userInput), 2);
-            userInput = Math.Pow(Double.Parse(userInput), 2).ToString();
+            if (equalsClicked)
+            {
+                calculatorDisplay.Text += Math.Pow(result, 2);
+                userInput = Math.Pow(result, 2).ToString();
+                result = Math.Pow(result, 2);
+            }
+            else 
+            {
+                calculatorDisplay.Text += Math.Pow(Double.Parse(userInput), 2);
+                userInput = Math.Pow(Double.Parse(userInput), 2).ToString();
+            }
             ifPreviouslyModified = true;
         }
 
         private void rootButton_Click(object sender, EventArgs e)
         {
+            if (userInput == "0")
+            {
+                calculatorDisplay.Text = "Error";
+                return;
+            }
             calculatorDisplay.Text = "";
-            calculatorDisplay.Text += Math.Sqrt(Double.Parse(userInput));
-            userInput = Math.Sqrt(Double.Parse(userInput)).ToString();
+            if (equalsClicked)
+            {
+                calculatorDisplay.Text += Math.Sqrt(result);
+                userInput = Math.Sqrt(result).ToString();
+                result = Math.Sqrt(result);
+            }
+            else
+            {
+                calculatorDisplay.Text += Math.Sqrt(Double.Parse(userInput));
+                userInput = Math.Sqrt(Double.Parse(userInput)).ToString();
+            }
             ifPreviouslyModified = true;
         }
 
@@ -273,11 +483,13 @@ namespace Kalkulator
             if (ifPreviouslyModified) return;
 
             if (calculatorDisplay.Text.Length > 0)
+            {
+                userInput = calculatorDisplay.Text.Remove(calculatorDisplay.Text.Length - 1, 1);
                 calculatorDisplay.Text = calculatorDisplay.Text.Remove(calculatorDisplay.Text.Length - 1, 1);
+            }
 
             if (calculatorDisplay.Text == "")
                 calculatorDisplay.Text = "0";
-            userInput = "";
         }
 
         private void clearEntryButton_Click(object sender, EventArgs e)
@@ -288,11 +500,13 @@ namespace Kalkulator
 
         private void clearAllButton_Click(object sender, EventArgs e)
         {
-            first = "";
-            second = "";
             userInput = "";
             result = 0.0;
             calculatorDisplay.Text = "0";
+            ifPreviouslyModified = false;
+            equalsClicked = false;
+            operationClicked = false;
+            function = "";
         }
     }
 }

@@ -320,6 +320,10 @@ namespace Kalkulator
 
         private void plusButton_Click(object sender, EventArgs e)
         {
+            if (Double.IsNaN(calculatorDisplay.Text[calculatorDisplay.Text.Length - 1]))
+            {
+                calculatorDisplay.Text = calculatorDisplay.Text.Substring(1);
+            }
             if (userInput != "" && equalsClicked == false && operationClicked == false)
             {
                 if (function == "")
@@ -399,16 +403,16 @@ namespace Kalkulator
 
         private void decimalButton_Click(object sender, EventArgs e)
         {
-            if (userInput.Contains(",")) return;
+            if (userInput.Contains(".")) return;
             if (userInput=="")
             {
-                calculatorDisplay.Text += ",";
-                userInput += "0,";
+                calculatorDisplay.Text += ".";
+                userInput += "0.";
             }
             else 
             {
-                calculatorDisplay.Text += ",";
-                userInput += ",";
+                calculatorDisplay.Text += ".";
+                userInput += ".";
             }
         }
 
@@ -507,6 +511,23 @@ namespace Kalkulator
             equalsClicked = false;
             operationClicked = false;
             function = "";
+        }
+
+        private void negativeNumberButton_Click(object sender, EventArgs e)
+        {
+            if (calculatorDisplay.Text.Length > 0)
+            {
+                if (calculatorDisplay.Text.StartsWith("-"))
+                {
+                    calculatorDisplay.Text = calculatorDisplay.Text.Substring(1);
+                    userInput = userInput.Substring(1);
+                }
+                else if (!string.IsNullOrEmpty(calculatorDisplay.Text) && decimal.Parse(calculatorDisplay.Text) != 0)
+                {
+                    calculatorDisplay.Text = "-" + calculatorDisplay.Text;
+                    userInput = userInput.Insert(0, "-");
+                }
+            }
         }
     }
 }

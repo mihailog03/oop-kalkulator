@@ -8,3 +8,14 @@ C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.csproj.Gene
 C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.exe
 C:\Users\user\Desktop\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.pdb
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\bin\Debug\Kalkulator.exe.config
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\bin\Debug\Kalkulator.exe
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\bin\Debug\Kalkulator.pdb
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.csproj.AssemblyReference.cache
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.csproj.SuggestedBindingRedirects.cache
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.Form1.resources
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.Properties.Resources.resources
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.csproj.GenerateResource.cache
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.csproj.CoreCompileInputs.cache
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.exe
+C:\Users\cakiz\Desktop\LAKI\PRIPREMA ZA FAKS\OOP MATURSKI\oop-kalkulator\Kalkulator\obj\Debug\Kalkulator.pdb

@@ -52,6 +52,7 @@ namespace Kalkulator
 
         private void num1_Click(object sender, EventArgs e)
         {
+//prvi_button
             if (ifPreviouslyModified)
             {
                 ifPreviouslyModified = false;
